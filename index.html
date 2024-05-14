@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      .body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .hero {
+        height: auto;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        /* padding: 10px; */
+      }
+
+      .hero .data-diri {
+        position: relative;
+        width: 40%;
+        height: auto;
+        background-color: rgb(255, 251, 251);
+        margin-right: 1.5rem;
+        box-shadow: 5px 5px 20px rgb(210, 208, 208);
+        z-index: 1;
+      }
+
+      .hero .data-diri img {
+        display: block;
+        margin: auto;
+      }
+      .hero .data-diri h1 {
+        font-size: 1.5rem;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif, "Times New Roman",
+          Times, serif;
+        text-align: center;
+        font-weight: bold;
+        font-style: unset;
+      }
+      .hero .data-diri p {
+        margin-top: 10px;
+        font-size: 15px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif, "Times New Roman",
+          Times, serif;
+        text-align: center;
+        font-style: italic;
+        color: rgb(106, 116, 126);
+      }
+
+      .data-diri .sosmed {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .data-diri .sosmed img {
+        padding: 5px;
+        width: 50px;
+        margin-right: 10px;
+      }
+
+      .blur {
+        position: absolute;
+        width: 200px;
+        height: 300px;
+        background-color: aqua;
+        filter: blur(4rem);
+        top: 20%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: -1;
+      }
+
+      .hero .about-us {
+        position: relative;
+        padding: 10px;
+        width: 70%;
+        height: auto;
+        background-color: white;
+        box-shadow: 5px 5px 20px rgb(210, 208, 208);
+        z-index: 1;
+        overflow: auto;
+      }
+
+      .about-us .about {
+        padding: 10px 20px;
+        margin-top: 15px;
+      }
+
+      .about-us h1 {
+        font-size: 1.2rem;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif, "Times New Roman",
+          Times, serif;
+        font-weight: bold;
+        font-style: unset;
+        color: rgb(57, 218, 218);
+      }
+
+      .about-us .about p {
+        margin-top: 10px;
+        font-size: 16px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif, "Times New Roman",
+          Times, serif;
+        text-align: justify;
+        font-style: unset;
+        line-height: 1.5;
+        /* color: rgb(106, 116, 126); */
+      }
+
+      .about-us .project {
+        padding: 5px 20px;
+      }
+      .about-us .list-project {
+        width: 98%;
+        padding: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .item {
+        padding: 20px;
+        text-align: center;
+        width: 200px;
+        height: 100px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px gray;
+      }
+
+      /* Blur About */
+      .blur-about1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 20%;
+        height: 50px;
+        background-color: rgb(28, 217, 211);
+        /* filter: blur(5rem); */
+        top: 0%;
+        right: 0;
+        margin: auto;
+        z-index: -1;
+        box-shadow: 2px 2px 10px rgb(220, 220, 220);
+        border-bottom-left-radius: 20px;
+      }
+
+      .blur-about1 p {
+        font-size: 1rem;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        color: white;
+        font-style: italic;
+      }
+
+      .about-us .sertifikat {
+        padding: 5px 20px;
+      }
+
+      .about-us .skill {
+        padding: 2px 20px;
+      }
+
+      .about-us .list-skill {
+        display: flex;
+        gap: 10px;
+      }
+
+      .about-us .skill p {
+        font-size: 1rem;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-style: unset;
+        /* color: rgb(106, 116, 126); */
+      }
+
+      .sertifikat .list-sertif {
+        padding: 0px;
+      }
+
+      .sertifikat .list-sertif p {
+        font-size: 1rem;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-style: unset;
+        /* color: rgb(106, 116, 126); */
+      }
+
+      .data-diri .kontak-saya a {
+        width: 70%;
+        height: 5%;
+        margin: auto;
+        background-color: rgb(250, 179, 47);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem;
+        padding: 5px;
+      }
+
+      .data-diri .kontak-saya p {
+        font-size: 1rem;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-style: unset;
+        color: white;
+        font-weight: bold;
+      }
+
+      .data-diri .kontak-saya a {
+        text-decoration: none;
+      }
+
+      .data-diri .kontak-saya a:hover {
+        background-color: rgb(220, 143, 0);
+      }
+
+      .data-diri .line-1 {
+        position: absolute;
+        top: 4%;
+        left: 4%;
+      }
+      .data-diri .line-1 img {
+        transform: rotate(30deg);
+      }
+      .data-diri .line-2 {
+        position: absolute;
+        bottom: 20%;
+        right: 0;
+      }
+
+      .data-diri .create-at {
+        margin-top: 20px;
+      }
+      .data-diri .create-at p {
+        color: black;
+        font-size: 0.7rem;
+      }
+
+      /* Media query untuk ponsel dengan lebar maksimum 600px */
+      @media only screen and (max-width: 600px) {
+        /* Ganti properti atau tambahkan properti sesuai kebutuhan untuk tata letak di ponsel */
+        .hero {
+          display: block;
+        }
+
+        .hero .data-diri {
+          width: 100%;
+          margin: auto;
+          margin-bottom: 2rem;
+        }
+        .hero .about-us {
+          margin-top: 2rem;
+          width: 90%;
+          margin: auto;
+        }
+
+        .item {
+          width: 100%;
+          height: 200px;
+          background-size: contain;
+        }
+
+        .data-diri img {
+          width: 260px;
+        }
+
+        .data-diri .sosmed img {
+          width: 30px;
+        }
+
+        .hero .data-diri h1 {
+          font-size: 1rem;
+        }
+        .hero .data-diri p {
+          font-size: 0.7rem;
+        }
+
+        .hero .data-diri {
+          height: 550px;
+        }
+
+        .about-us .about p {
+          font-size: 0.9rem;
+        }
+
+        .sertifikat .list-sertif p {
+          font-size: 0.9rem;
+        }
+
+        .data-diri .line-1,
+        .line-2 {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <!-- Start Data Diri -->
+      <div class="data-diri">
+        <img src="img/foto.png" alt="" width="400" />
+        <h1>I Gede Juwa Mardood</h1>
+        <p>Web Developer</p>
+        <div class="sosmed">
+          <a href="https://www.instagram.com/juwamardott/" target="_blank"
+            ><img src="img/instagram.png" alt=""
+          /></a>
+          <!-- <a href="https://wa.me/6285847968314" target="_blank"
+            ><img src="img/whatsapp.png" alt=""
+          /></a> -->
+          <a href="https://github.com/juwamardott" target="_blank"
+            ><img src="img/github.png" alt=""
+          /></a>
+          <a href=""><img src="img/twitter.png" alt="" /></a>
+          <a href=""><img src="img/tik-tok.png" alt="" /></a>
+        </div>
+
+        <div class="kontak-saya">
+          <a href="https://wa.me/6285847968314" target="_blank">
+            <p>Whatsapp Sekarang</p>
+          </a>
+        </div>
+
+        <div class="create-at">
+          <p>Dibuat pada 15 Mei 2024</p>
+        </div>
+
+        <!-- Blur Belakang -->
+        <div class="blur"></div>
+        <!-- Hiasan -->
+        <div class="line-1">
+          <img src="icon/line1.png" alt="" width="50" />
+        </div>
+        <div class="line-2">
+          <img src="icon/pink.png" alt="" width="50" />
+        </div>
+      </div>
+
+      <!-- End Data Diri -->
+      <!-- Start About Us -->
+      <div class="about-us">
+        <div class="about">
+          <h1>Tentang Saya</h1>
+          <p>
+            Perkenalkan nama saya I Gede Juwa Mardood, saya berasal dari sebuah
+            desa di Kabupaten Jembrana. Saya memiliki minat di bidang Web
+            Developer karena saya sangat menikmati setiap proses kecil dari
+            pembuatan suatu aplikasi. Saya lulusan dari Institut Bisnis dan
+            Teknologi Indonesia dari jurusan Manajemen Teknik Informatika.
+            Tujuan saya ingin menjadi Software Engineer yang bisa bermanfaat
+            khususnya bidang Teknologi
+          </p>
+        </div>
+        <!-- Start Skill -->
+        <div class="skill">
+          <h1>Skill</h1>
+          <div class="list-skill">
+            <img src="skill/skill.png" alt="" width="150" />
+          </div>
+        </div>
+        <!-- End Skill -->
+        <!-- Start Sertifikat -->
+        <div class="sertifikat">
+          <h1>Sertifikat</h1>
+          <div class="list-sertif">
+            <p>Information Technology Specialist Database</p>
+            <p>TOEIC: Test Of English For International Communication</p>
+            <p>Microsoft Office Specialist Excel 2019</p>
+          </div>
+        </div>
+        <!-- End Sertifikat -->
+        <!-- Start Project -->
+        <div class="project">
+          <h1>Project Terbaru</h1>
+          <div class="list-project">
+            <a
+              href="https://github.com/juwamardott/Apps-pengelolaan-transaksi-Rentcar"
+              id="slider"
+              class="item"
+              style="background-image: url('project/1.png')"
+            ></a>
+            <a
+              href="https://github.com/juwamardott/App-Cashier-V-0.2"
+              id="slider"
+              class="item"
+              style="background-image: url('project/2.png')"
+            ></a>
+            <a
+              href="https://github.com/juwamardott/Made-Putu"
+              id="slider"
+              class="item"
+              style="background-image: url('project/3.png')"
+            ></a>
+          </div>
+        </div>
+        <!-- End Project -->
+
+        <div class=""></div>
+
+        <div class="blur-about1"><p>Mardood</p></div>
+      </div>
+      <!-- End About Us -->
+    </div>
+  </body>
+</html>
